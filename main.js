@@ -1,8 +1,9 @@
 const api = "https://api.genderize.io";
 
+
 function showResult(name, gender, probability) {
     const predic = document.getElementById('predic');
-    const procen = (probability * 100).toFixed(2);
+    const procen = probability ? (probability * 100).toFixed(2) : 0;
     let genderDec = "";
 
     if (gender === "male") {
@@ -13,7 +14,10 @@ function showResult(name, gender, probability) {
         genderDec = "tidak diketahui"; 
     }
 
-    predic.textContent = `Halo ${name}, sistem memprediksi jenis kelamin kamu sebagai ${genderDec} dengan kemungkinan ${procen}%. Namun, ini hanya prediksi berdasarkan data statistik dan bisa saja tidak akurat.`;
+    const warning = probability < 0.6 ? "⚠️ Hasil prediksi ini kurang akurat." : "";
+
+    predic.textContent = `Halo ${name}, sistem memprediksi jenis kelamin kamu sebagai ${genderDec} dengan kemungkinan ${procen}%. ${warning}`;
+}
 
 async function predict(event) { 
     if (event.key === "Enter") {
@@ -23,7 +27,7 @@ async function predict(event) {
         if (user) {
             predic.textContent = "Sedang memproses...";
 
-            const QueryUrl = `${api}/?name=${user}`;
+            const QueryUrl = `${api}/?name=${user}&country_id=ID`;
 
             try {
                 const res = await fetch(QueryUrl);
@@ -46,4 +50,5 @@ async function predict(event) {
         }
     }
 }
+
 document.getElementById("nameInput").addEventListener("keydown", predict);
