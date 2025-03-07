@@ -13,8 +13,7 @@ function showResult(name, gender, probability) {
         genderDec = "tidak diketahui"; 
     }
 
-    predic.textContent = `Halo ${name}, jenis kelamin kamu kemungkinan adalah ${genderDec} sebesar ${procen}%`;
-}
+    predic.textContent = `Halo ${name}, sistem memprediksi jenis kelamin kamu sebagai ${genderDec} dengan kemungkinan ${procen}%. Namun, ini hanya prediksi berdasarkan data statistik dan bisa saja tidak akurat.`;
 
 async function predict(event) { 
     if (event.key === "Enter") {
