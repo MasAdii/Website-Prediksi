@@ -22,7 +22,7 @@ async function predict(event) {
     if (event.key === "Enter") {
         const user = event.target.value.trim(); 
         if (user) {
-            const QueryUrl = `${api}/?name=${user};
+            const QueryUrl = `${api}/?name=${user}&country_id=ID`;
 
             try {
                 const res = await fetch(QueryUrl);
