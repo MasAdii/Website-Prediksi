@@ -54,5 +54,6 @@ label {
 }
 
 #predic {
+    display: flex;
     text-align: center;
 }
