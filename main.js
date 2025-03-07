@@ -1,4 +1,3 @@
-
 const api = "https://api.genderize.io";
 
 function showResult(name, gender, probability) {
