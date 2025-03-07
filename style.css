@@ -1,0 +1,54 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: arial;
+    background: linear-gradient(cyan, white);
+    height: 100vh;
+    width: 100%;
+}
+
+.title {
+    color: black;
+    background-color: aliceblue;
+    font-size: 22px;
+    font-weight: 550;
+    text-transform: uppercase;
+    padding: 4px 0;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 18.3px;
+    text-align: center;
+    font-family: serif;
+}
+
+.container input {
+    padding: 5px 2px;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
